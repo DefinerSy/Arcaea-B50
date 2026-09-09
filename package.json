@@ -10,6 +10,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "b50": "node --experimental-strip-types scripts/b50.mjs",
+    "examples": "node scripts/create-examples.mjs",
     "test:cli": "node --experimental-strip-types --test tests/cli.integration.mjs",
     "test": "node --experimental-strip-types --test tests/*.test.ts"
   },

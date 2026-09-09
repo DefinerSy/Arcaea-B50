@@ -6,6 +6,22 @@
 
 在线使用：<https://definersy.github.io/Arcaea-B50/>
 
+## 示例存档
+
+仓库内含一对相同成绩的合成示例，适合第一次体验和自动化测试：
+
+- [`examples/example.json`](./examples/example.json)：本工具的 JSON 存档，包含玩家资料、角色和 50 条成绩。
+- [`examples/example.st3`](./examples/example.st3)：SQLite 格式的 st3 示例，包含 `scores` 表和当前角色配置。
+
+网页中下载任一示例后导入即可。命令行可直接运行：
+
+```sh
+npm run b50 -- ./examples/example.json -o ./example-json.png --width 1440
+npm run b50 -- ./examples/example.st3 -o ./example-st3.png --name "Example Player" --width 2160
+```
+
+示例成绩和玩家资料均为合成内容，不是任何真实玩家或游戏存档；更多说明见 [examples/README.md](./examples/README.md)。
+
 ## 非交互式：存档直接输出 PNG
 
 在项目目录安装依赖后即可使用，无需先启动网页服务，也无需手动执行 `npm run build`：

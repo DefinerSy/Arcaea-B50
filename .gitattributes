@@ -5,5 +5,6 @@
 *.jpeg binary
 *.webp binary
 *.wasm binary
+*.st3 binary
 *.ttf binary
 *.otf binary
