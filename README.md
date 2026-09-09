@@ -4,6 +4,8 @@
 
 使用 **Vite + TypeScript + 原生 CSS**，没有前端框架运行时。`sql.js` 在 Web Worker 内读取 SQLite，解析器仅在导入时加载；`html-to-image` 在导出时按需加载。所有存档处理、计算与图片生成均在本地进行，不上传文件。图片、字体、曲目表和 WASM 均来自本站。
 
+在线使用：<https://definersy.github.io/Arcaea-B50/>
+
 ## 非交互式：存档直接输出 PNG
 
 在项目目录安装依赖后即可使用，无需先启动网页服务，也无需手动执行 `npm run build`：
@@ -96,7 +98,7 @@ npm run build    # TypeScript 检查并生成 dist/
 npm run preview  # 预览生产构建
 ```
 
-将 `dist/` 部署到静态服务器即可；相对资源路径支持 GitHub Pages 子目录部署。请通过 HTTP 预览，不要直接双击 HTML。
+将 `dist/` 部署到任意静态服务器即可；相对资源路径支持 GitHub Pages 子目录部署。推送到 `main` 后，GitHub Actions 会自动构建并更新在线页面。请通过 HTTP 预览，不要直接双击 HTML。
 
 ## 已实现
 
