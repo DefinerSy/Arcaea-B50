@@ -1,0 +1,26 @@
+{
+  "name": "arcaea-b50",
+  "version": "1.0.0",
+  "description": "Generate compact Arcaea Best 50 PNGs from st3 or JSON archives.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "b50": "node --experimental-strip-types scripts/b50.mjs",
+    "test:cli": "node --experimental-strip-types --test tests/cli.integration.mjs",
+    "test": "node --experimental-strip-types --test tests/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/sql.js": "^1.4.11",
+    "playwright": "^1.63.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "html-to-image": "^1.11.13",
+    "sql.js": "^1.14.2"
+  }
+}

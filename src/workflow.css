@@ -1,0 +1,375 @@
+.workflow {
+  max-width: 1440px;
+  margin: 26px auto 0;
+  padding: 24px 32px;
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+  border-radius: 6px;
+  width: calc(100% - 104px);
+}
+.workflow-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.workflow-kicker {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+.workflow h2 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin: 9px 0;
+}
+.workflow p {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0;
+}
+.workflow-actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.action-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  border: 1px solid #ad86c44a;
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--accent-strong);
+  padding: 13px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: filter 0.15s;
+}
+.action-button.primary {
+  background: linear-gradient(120deg, #d8b5ed, #b88bd4);
+  color: #2d193c;
+  border-color: #d8b5ed;
+  font-weight: 600;
+  box-shadow: 0 3px 20px #bf91d91a;
+}
+.action-button:hover {
+  filter: brightness(1.1);
+}
+.workflow-options {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  border-top: 1px solid var(--line);
+  margin-top: 22px;
+  padding-top: 17px;
+}
+.workflow-options label {
+  font-size: 10px;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+.workflow-options input,
+.workflow-options select {
+  width: 100%;
+  font: inherit;
+  font-size: 12px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 3px;
+  padding: 9px 11px;
+  min-height: 37px;
+}
+.workflow-options input:focus-visible,
+.workflow-options select:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+.workflow-status {
+  font-size: 10px;
+  line-height: 1.9;
+  color: var(--muted);
+  margin-top: 14px;
+  overflow-wrap: anywhere;
+}
+.workflow-status.error {
+  color: #edabb9;
+}
+.text-button {
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-size: 11px;
+  white-space: nowrap;
+  padding: 10px 0 10px 15px;
+  cursor: pointer;
+}
+.workflow button:disabled,
+.workflow input:disabled,
+.workflow select:disabled,
+.theme-switch button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+.workflow[aria-busy="true"] .workflow-status:before {
+  content: "◌";
+  display: inline-block;
+  margin-right: 8px;
+  animation: working-spin 1s linear infinite;
+}
+@keyframes working-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.image-credit {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding: 16px 0 24px;
+}
+.player-info {
+  min-width: 0;
+}
+.player-name {
+  overflow-wrap: anywhere;
+  display: block;
+}
+.player-tag {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.export-dialog {
+  width: min(860px, calc(100vw - 32px));
+  max-height: 92dvh;
+  border: 1px solid #ab84c64d;
+  border-radius: 8px;
+  padding: 0;
+  background: var(--surface-soft);
+  color: var(--text);
+  box-shadow: 0 20px 100px #0008;
+}
+.export-dialog::backdrop {
+  background: #0d061cd9;
+  backdrop-filter: blur(6px);
+}
+.export-dialog-head {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.export-dialog h2 {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 0 0 7px;
+}
+.export-dialog p {
+  margin: 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+.export-dialog-head button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 30px;
+  cursor: pointer;
+  padding: 3px 8px;
+}
+.export-image-scroll {
+  overflow: auto;
+  max-height: 65dvh;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.export-image-scroll img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.export-dialog-actions {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.export-dialog-actions span {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+.export-panel {
+  padding: 32px 48px 0 !important;
+}
+.export-panel .records-section {
+  padding-top: 28px;
+}
+.export-panel .record-bar {
+  padding-top: 16px;
+}
+.export-panel .score-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+}
+.export-panel .score-card {
+  transform: none;
+  box-shadow: none;
+  break-inside: avoid;
+}
+.export-panel .score-card .jacket {
+  transform: none;
+}
+.export-panel .end-mark {
+  margin-top: 24px;
+}
+.export-panel .end-copy {
+  margin-bottom: 24px;
+}
+.export-panel .data-note {
+  margin-bottom: 0;
+}
+.export-panel .updated {
+  font-size: 10px;
+}
+.export-panel .player-info p {
+  font-size: 10px;
+}
+.export-panel .profile-stats small {
+  font-size: 10px;
+}
+.export-panel .data-note p {
+  font-size: 10px;
+}
+@media (max-width: 1190px) {
+  .workflow {
+    width: calc(100% - 60px);
+  }
+  .workflow-top {
+    gap: 16px;
+  }
+  .workflow h2 {
+    font-size: 19px;
+  }
+  .action-button {
+    padding: 12px 14px;
+  }
+  .workflow-actions {
+    gap: 8px;
+  }
+}
+@media (max-width: 760px) {
+  .workflow {
+    width: calc(100% - 44px);
+    padding: 22px;
+    margin-top: 22px;
+  }
+  .workflow-top {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .workflow-actions > button {
+    flex: 1;
+  }
+  .workflow-options {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .workflow-options label {
+    flex: 1 1 40%;
+  }
+  .workflow-options .text-button {
+    flex: 1 1 40%;
+    text-align: right;
+  }
+  .workflow-options label:last-of-type {
+    max-width: 60%;
+  }
+  .export-dialog-actions {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 14px 18px;
+  }
+  .export-dialog-head {
+    padding: 16px 18px;
+  }
+  .export-dialog h2 {
+    font-size: 16px;
+  }
+  .export-image-scroll {
+    max-height: 58dvh;
+  }
+  .image-credit {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+@media (max-width: 520px) {
+  .workflow {
+    width: calc(100% - 28px);
+    padding: 18px 16px;
+    margin-top: 16px;
+  }
+  .workflow h2 {
+    font-size: 18px;
+  }
+  .workflow p {
+    font-size: 10px;
+  }
+  .workflow-kicker {
+    font-size: 8px;
+  }
+  .workflow-options {
+    margin-top: 17px;
+    padding-top: 14px;
+  }
+  .workflow-options label {
+    font-size: 9px;
+  }
+  .workflow-options input,
+  .workflow-options select {
+    font-size: 11px;
+    padding: 9px 8px;
+  }
+  .workflow-status {
+    font-size: 10px;
+  }
+  .workflow .action-button {
+    font-size: 11px;
+    padding: 11px 9px;
+  }
+  .image-credit {
+    font-size: 7px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .workflow[aria-busy="true"] .workflow-status:before {
+    animation: none;
+  }
+}
+@media print {
+  .workflow,
+  .export-dialog {
+    display: none;
+  }
+}

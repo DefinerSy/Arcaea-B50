@@ -1,0 +1,323 @@
+/* Compact, angular player strip shared by the page and PNG renderer. */
+.profile-panel.identity-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(330px, 1.2fr) 136px;
+  gap: 22px;
+  min-height: 0;
+  padding: 7px 24px 7px 12px;
+  border: 1px solid #c2a7d477;
+  border-radius: 0;
+  background: linear-gradient(120deg, #332440, #1d1727);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 13px) 0,
+    100% 13px,
+    100% 100%,
+    13px 100%,
+    0 calc(100% - 13px)
+  );
+}
+.identity-panel::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-top: 1px solid #dec5ee40;
+  border-bottom: 1px solid #dec5ee40;
+  pointer-events: none;
+  z-index: 3;
+}
+.identity-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    #23182ff5 12%,
+    #251b3460 46%,
+    #211a31b3 76%,
+    #1d1629f0
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+.profile-character {
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  width: 440px;
+  height: 285px;
+  transform: translateY(-47%);
+  object-fit: contain;
+  opacity: 0.52;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 22%,
+    #000 77%,
+    transparent
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+.identity-panel .identity-player,
+.identity-panel .profile-stats,
+.identity-panel .potential-showcase {
+  position: relative;
+  z-index: 2;
+}
+.identity-panel .identity-player {
+  min-width: 0;
+  gap: 14px;
+  padding: 9px 20px 9px 12px;
+  border-left: 2px solid var(--accent);
+  background: linear-gradient(100deg, #e3c5fa16, #b791d108);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+}
+.identity-panel .avatar-frame {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  padding: 3px;
+}
+.identity-panel .player-info {
+  min-width: 0;
+}
+.identity-panel .player-name {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  overflow-wrap: anywhere;
+}
+.identity-panel .player-info p {
+  margin: 8px 0 0;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+.identity-panel .player-info p span {
+  color: var(--accent-strong);
+}
+.identity-panel .profile-stats {
+  grid-column: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.identity-panel .profile-stats > div {
+  padding: 7px 0;
+  border-bottom: 1px solid #d8b6ed38;
+}
+.identity-panel .profile-stats > div + div {
+  border-left: 0;
+}
+.identity-panel .profile-stats > div > span {
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+.identity-panel .profile-stats strong {
+  font-size: 23px;
+  margin: 7px 0 0;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+.potential-showcase {
+  width: 136px;
+  justify-self: end;
+  text-align: center;
+}
+.potential-showcase::before {
+  content: "";
+  position: absolute;
+  inset: -10px -25px;
+  background: linear-gradient(110deg, #c696e309, #c696e31b);
+  border-left: 1px solid #d7b9ec44;
+  transform: skewX(-12deg);
+  z-index: -1;
+}
+.potential-heading {
+  display: block;
+  font-size: 8px;
+  line-height: 10px;
+  letter-spacing: 2.8px;
+  color: var(--accent-strong);
+}
+.potential-badge {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+.potential-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px #e09ade25);
+}
+.potential-value {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: -0.8px;
+  text-shadow:
+    0 2px 3px #13091a,
+    0 0 8px #13091a;
+}
+:root[data-theme="light"] .identity-panel {
+  background: linear-gradient(120deg, #e6dded, #faf7fc);
+  border-color: #9d7db175;
+}
+:root[data-theme="light"] .identity-panel::before {
+  border-color: #a586b752;
+}
+:root[data-theme="light"] .identity-panel::after {
+  background: linear-gradient(
+    105deg,
+    #f7f1fcf2 12%,
+    #f1eaf788 46%,
+    #f1eaf7b3 76%,
+    #f8f4fbee
+  );
+}
+:root[data-theme="light"] .identity-panel .identity-player {
+  background: linear-gradient(100deg, #fff9, #c9b4da22);
+}
+:root[data-theme="light"] .identity-panel .profile-stats > div {
+  border-bottom-color: #9463ac4a;
+}
+@media (max-width: 1100px) {
+  .profile-panel.identity-panel {
+    grid-template-columns: minmax(180px, 1fr) minmax(280px, 1.2fr) 118px;
+    gap: 16px;
+    padding: 7px 18px 7px 10px;
+  }
+  .identity-panel .identity-player {
+    gap: 12px;
+    padding-left: 9px;
+  }
+  .identity-panel .avatar-frame {
+    width: 50px;
+    height: 50px;
+  }
+  .identity-panel .player-name {
+    font-size: 24px;
+  }
+  .identity-panel .profile-stats {
+    gap: 12px;
+  }
+  .identity-panel .profile-stats strong {
+    font-size: 21px;
+  }
+  .potential-showcase {
+    width: 118px;
+  }
+}
+@media (max-width: 800px) {
+  .profile-panel.identity-panel {
+    grid-template-columns: minmax(0, 1fr) 104px;
+    grid-template-areas: "player potential" "stats stats";
+    gap: 7px 12px;
+    padding: 9px 15px;
+  }
+  .identity-panel .identity-player {
+    grid-area: player;
+  }
+  .identity-panel .profile-stats {
+    grid-area: stats;
+    grid-column: 1 / -1;
+    text-align: center;
+    gap: 10px;
+  }
+  .identity-panel .profile-stats > div {
+    padding: 5px 0;
+  }
+  .identity-panel .profile-stats strong {
+    margin-top: 5px;
+  }
+  .potential-showcase {
+    grid-area: potential;
+    width: 104px;
+  }
+  .potential-badge {
+    width: 90px;
+    height: 90px;
+  }
+  .potential-value {
+    font-size: 22px;
+  }
+  .potential-heading {
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+  .profile-character {
+    right: 8%;
+    width: 350px;
+    height: 270px;
+  }
+}
+@media (max-width: 450px) {
+  .profile-panel.identity-panel {
+    grid-template-columns: minmax(0, 1fr) 90px;
+    padding: 8px 11px;
+    gap: 6px 8px;
+  }
+  .identity-panel .identity-player {
+    gap: 9px;
+    padding: 7px 10px 7px 7px;
+  }
+  .identity-panel .avatar-frame {
+    width: 42px;
+    height: 42px;
+  }
+  .identity-panel .player-name {
+    font-size: 21px;
+    letter-spacing: 0.4px;
+  }
+  .identity-panel .player-info p {
+    font-size: 8px;
+    letter-spacing: 0;
+    margin-top: 6px;
+  }
+  .identity-panel .player-info p span {
+    margin-left: 2px;
+  }
+  .potential-showcase {
+    width: 90px;
+  }
+  .potential-badge {
+    width: 86px;
+    height: 86px;
+  }
+  .potential-value {
+    font-size: 21px;
+  }
+  .potential-heading {
+    font-size: 7px;
+    letter-spacing: 1.8px;
+  }
+  .identity-panel .profile-stats {
+    gap: 7px;
+  }
+  .identity-panel .profile-stats > div > span {
+    font-size: 6px;
+    letter-spacing: 0.5px;
+  }
+  .identity-panel .profile-stats strong {
+    font-size: 20px;
+  }
+  .profile-character {
+    right: -18%;
+    opacity: 0.42;
+  }
+}
